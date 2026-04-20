@@ -1,4 +1,4 @@
-const tripModel = require('../models/trip.model')
+'ERROR', error.messageconst tripModel = require('../models/trip.model')
 
 async function tripAdditionController(req, res){
     console.log(req.body)
@@ -19,7 +19,7 @@ async function tripAdditionController(req, res){
         await tripDetail.save()
         res.send('Trip added Successfully')
     }catch(error){
-        console.log('ERROR')
+        console.log('ERROR', error.message)
         res.send('SOMETHING WENT WRONG')
     }
 }
@@ -30,7 +30,7 @@ async function getTripDetailsController(req,res){
         .then(doc => res.send(doc))
         .catch(err => res.send('SOMETHING WENT WRONG WHILE FETCHING'))
     }catch(error){
-        console.log('ERROR')
+        console.log('ERROR', error.message)
         res.send('SOMETHING WENT WRONG')
     }
 }
@@ -41,7 +41,7 @@ async function getTripDetailsByIdController(req,res){
         .then(doc => res.send(doc))
         .catch(err => res.send('Nothing in database'))
     }catch(error){
-        console.log('ERROR')
+        console.log('ERROR', error.message)
         res.send('SOMETHING WENT WRONG')
     }
 }
