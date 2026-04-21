@@ -1,4 +1,4 @@
-'ERROR', error.messageconst tripModel = require('../models/trip.model')
+const tripModel = require('../models/trip.model')
 
 async function tripAdditionController(req, res){
     console.log(req.body)
